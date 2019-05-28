@@ -1,5 +1,3 @@
-//   let users = try? newJSONDecoder().decode(Users.self, from: jsonData)
-
 import Foundation
 
 // MARK: - User

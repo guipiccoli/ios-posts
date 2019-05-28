@@ -1,7 +1,4 @@
-//
-//  File.swift
-//  TownSq
-//
+
 //  Created by Guilherme Piccoli on 27/05/19.
 //  Copyright © 2019 Guilherme Piccoli. All rights reserved.
 //
@@ -25,7 +22,6 @@ struct APIService {
             do {
                 let posts = try JSONDecoder().decode([Post].self, from: data!)
                 completion(posts)
-//                print(posts)
             } catch {
                 print(error.localizedDescription)
                 completion([])
@@ -49,7 +45,6 @@ struct APIService {
             do {
                 let users = try JSONDecoder().decode([User].self, from: data!)
                 completion(users)
-//                print(users)
             } catch {
                 print(error.localizedDescription)
                 completion([])

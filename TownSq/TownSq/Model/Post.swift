@@ -1,5 +1,3 @@
-//   let post = try? newJSONDecoder().decode(Post.self, from: jsonData)
-
 import Foundation
 
 struct Post: Codable {
@@ -7,10 +5,5 @@ struct Post: Codable {
     let id: Int
     let title: String
     let body: String
-    
-//    enum CodingKeys: String, CodingKey {
-//        case userId
-//        case id, title, body
-//    }
 }
 

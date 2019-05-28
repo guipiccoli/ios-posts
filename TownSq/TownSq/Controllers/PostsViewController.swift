@@ -51,7 +51,7 @@ extension PostsViewController: UITableViewDelegate {
         guard let listUsers = listUsers else {return}
         
         guard let post: Post = listPosts[indexPath.row] else {return}
-        guard let user: User = self.listUsers![self.listPosts![indexPath.row].userId-1] else {return}
+        guard let user: User = listUsers[listPosts[indexPath.row].userId-1] else {return}
 
         performSegue(withIdentifier: "postDetails", sender: (post: post, user: user))
     }
@@ -81,8 +81,8 @@ extension PostsViewController: UITableViewDataSource {
         guard let listPosts = listPosts else {return cell}
         guard let listUsers = listUsers else {return cell}
         
-        cell.postTitleLabel.text = self.listPosts![indexPath.row].title
-        cell.postAuthorCell.text = "\(self.listUsers![self.listPosts![indexPath.row].userId-1].name) (\(self.listUsers![self.listPosts![indexPath.row].userId-1].username))"
+        cell.postTitleLabel.text = listPosts[indexPath.row].title
+        cell.postAuthorCell.text = "\(listUsers[listPosts[indexPath.row].userId-1].name) (\(listUsers[listPosts[indexPath.row].userId-1].username))"
         return cell
     }
 }
